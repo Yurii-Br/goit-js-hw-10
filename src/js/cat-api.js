@@ -17,24 +17,33 @@ export function fetchBreeds() {
   }
   
   export function fetchCatByBreed(breedId) {
-    return fetch(`https://api.thecatapi.com/v1/images/search?breed_id=${breedId}`)
+    console.log('id'+breedId);
+    return fetch(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`)
+    
       .then((response) => {
         if (!response.ok) {
           throw new Error('Error fetching cat data');
         }
-        console.log(response);
         return response.json();
-        
       })
       .then((data) => {
+        console.log('data',data);
         if (data && data.length > 0) {
-          return data;
+          const catData = data[0];
+          const imageUrl = catData.url; 
+  
+          
+          return {
+            imageUrl: imageUrl,
+            breedId: breedId
+          };
         } else {
           throw new Error('No cat data available');
         }
       })
       .catch((error) => {
         console.error('Error fetching cat data:', error);
-        throw error; 
+        throw error;
       });
-  } 
+  }
+  
