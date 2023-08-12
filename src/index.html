@@ -3,13 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../node_modules/slim-select/dist/slimselect.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Homework 10</title>
+    
   </head>
   <body>
-    <select class="breed-select"></select>
-    <p class="loader">Loading data, please wait...</p>
+    <select class="breed-select" id="single">
+
+    </select>
+    <p class="load Is-hidden">Loading data, please wait <span class="loader"></span></p>
+    <div class="err-wrap Is-hidden">
     <p class="error">Oops! Something went wrong! Try reloading the page!</p>
-    <div class="cat-info"></div>
+    </div>
+    
+    <div class="cat-info">
+    <!-- <img src="" alt="" class="photo">
+    <h2 class="title">Variant</h2>
+    <p class="description"></p> -->
+    </div>
+
+    
 
     <script src="./js/index.js" type="module"></script>
   </body>
