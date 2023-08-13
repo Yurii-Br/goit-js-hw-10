@@ -37,6 +37,7 @@ function displayBreeds() {
                   
                 })
                 .catch((error) => {
+                  box.innerHTML = '';
                   Notiflix.Notify.failure('Error fetching cat data !');
                   console.error('Error fetching cat data:', error);
                 });
